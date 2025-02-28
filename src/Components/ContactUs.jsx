@@ -32,9 +32,10 @@ const ContactUs = () => {
   };
 
   return (
+    <div className="bg-gradient-to-b from-blue-100 to-white">
     <motion.section
       id="contact-us"
-      className="relative py-16 px-6 bg-gradient-to-b from-blue-100 to-white overflow-hidden"
+      className="relative py-16 px-6 overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -136,6 +137,7 @@ const ContactUs = () => {
         </form>
       </motion.div>
     </motion.section>
+    </div>
   );
 };
 

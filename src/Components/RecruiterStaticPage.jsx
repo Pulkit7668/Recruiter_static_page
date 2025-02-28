@@ -5,9 +5,11 @@ import AboutUs from "./AboutUs";
 import Subscriptions from "./Subscriptions";
 import Services from "./Services";
 import ContactUs from "./ContactUs";
+import { HiOutlineMenu } from "react-icons/hi";
 
 const RecruiterStaticPage = () => {
   const [selectedSection, setSelectedSection] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const renderSection = () => {
     switch (selectedSection) {
@@ -66,6 +68,33 @@ const RecruiterStaticPage = () => {
           <button className="font-semibold hover:text-blue-500 hover:border-b-2 border-orange-500 pb-1 transition-all duration-300 py-1">
             Sign Up
           </button>
+          {/* Menu Icon & Dropdown (Visible on Small Screens) */}
+          <div className="relative">
+            <button
+              className="p-2 rounded-md hover:bg-gray-200 transition"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+             <HiOutlineMenu className="h-7 w-7 text-gray-700" /> {/* React Icons Menu */}
+            </button>
+
+            {/* Dropdown Menu */}
+            {menuOpen && (
+              <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-48 py-2 border border-gray-200 z-50">
+                <button
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Recruiter Login
+                </button>
+                <button
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Client Login
+                </button>
+              </div>
+            )}
+         </div>
         </div>
       </nav>
 
