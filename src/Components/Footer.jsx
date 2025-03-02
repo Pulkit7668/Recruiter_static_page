@@ -18,6 +18,7 @@ const Footer = () => {
         { name: "About", path: "" },
         { name: "Services", path: "" },
         { name: "Contact", path: "" },
+        { name: "Terms & Conditions", path: "" },
       ],
     },
     {

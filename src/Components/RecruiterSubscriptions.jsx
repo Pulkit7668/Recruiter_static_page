@@ -6,7 +6,7 @@ const plans = [
   {
     name: "Basic",
     price: { monthly: 29, quarterly: 79, yearly: 299 },
-    features: ["Post 5 Jobs", "Access to 500+ Candidates", "Basic Support", "Standard Job Visibility", "Email Notifications"],
+    features: ["Post 5 Jobs", "Access to 500+ Candidates", "Basic Support", "Basic Job Visibility", "Email Notifications"],
     unavailable: ["AI Job Matching", "Priority Listing", "Dedicated Account Manager", "Advanced Analytics", "24/7 Support"],
     color: "border-blue-500 text-blue-600",
     bgColor: "bg-blue-50",
@@ -15,7 +15,7 @@ const plans = [
   {
     name: "Standard",
     price: { monthly: 59, quarterly: 159, yearly: 599 },
-    features: ["Post 20 Jobs", "Access to 2000+ Candidates", "AI Job Matching", "Priority Listing", "Advanced Analytics", "Enhanced Job Visibility"],
+    features: ["Post 20 Jobs", "Access to 2000+ Candidates", "Standard Support", "Standard Job Visibilty", "Advanced Analytics", "Enhanced Job Visibility", "AI Job Matching", "Priority Listing"],
     unavailable: ["Dedicated Account Manager", "24/7 Support"],
     color: "border-green-500 text-green-600",
     bgColor: "bg-green-50",
@@ -24,7 +24,7 @@ const plans = [
   {
     name: "Premium",
     price: { monthly: 99, quarterly: 269, yearly: 999 },
-    features: ["Unlimited Job Posts", "Access to 5000+ Candidates", "AI Job Matching", "Priority Listing", "Dedicated Account Manager", "Advanced Analytics", "24/7 Support", "Premium Job Visibility", "Custom Branding"],
+    features: ["Unlimited Job Posts", "Access to 5000+ Candidates", "Premium Support", "AI Job Matching", "Priority Listing", "Dedicated Account Manager", "Advanced Analytics", "24/7 Support", "Premium Job Visibility", "Custom Branding"],
     unavailable: [],
     color: "border-purple-500 text-purple-600",
     bgColor: "bg-purple-50",
@@ -34,7 +34,7 @@ const plans = [
 
 const billingOptions = ["monthly", "quarterly", "yearly"];
 
-const Subscriptions = () => {
+const RecruiterSubscriptions = () => {
   const [billingKey, setBillingKey] = useState("monthly");
 
   return (
@@ -150,4 +150,4 @@ const Subscriptions = () => {
   );
 };
 
-export default Subscriptions;
+export default RecruiterSubscriptions;

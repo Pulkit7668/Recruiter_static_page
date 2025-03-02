@@ -1,10 +1,10 @@
 import React from 'react'
-import RecruiterStaticPage from './Components/RecruiterStaticPage'
+import StaticPage from './Components/StaticPage'
 
 function App() {
   return (
-    <div className=''>
-      <RecruiterStaticPage />
+    <div>
+      <StaticPage />
     </div>
   )
 }
