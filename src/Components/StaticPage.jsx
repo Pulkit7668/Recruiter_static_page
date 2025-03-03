@@ -73,7 +73,7 @@ const StaticPage = () => {
           {/* Show Sign Up button only for recruiters */}
           {userType === "recruiter" && (
             <button className="font-semibold hover:text-blue-500 hover:border-b-2 border-orange-500 pb-1 transition-all duration-300 py-1 cursor-pointer">
-              Get in
+              Sign Up
             </button>
           )}
 

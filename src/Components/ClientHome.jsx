@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaMobileAlt, FaRocket, FaBuilding, FaSearch, FaTools, FaChartLine } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import ReviewsSlider from "./ReviewsSlider";
 import BusinessSection from "./BussinessSection";
 
 const Home = () => (
-  <div className="font-sans text-gray-900 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+  <div className="font-sans text-gray-900 bg-white relative overflow-hidden">
     {/* Hero Section */}
     <section id="home" className="mx-10 py-20 px-8 relative">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -38,7 +38,7 @@ const Home = () => (
 
         {/* Right Image */}
         <div className="md:w-1/2 flex justify-center mt-8 md:mt-0 relative">
-          <motion.img
+          <img
             src="https://cdn-imgs.dora.run/design/C6pnTNpIEvTJJNRLnn7TEL.webp/w/4096/h/4096/format/webp?"
             alt="Hiring Process"
             className="w-full max-w-md"
@@ -76,19 +76,19 @@ const Home = () => (
     </section>
 
     {/* Empowering */}
-    <section className="py-16">
+    <section className="py-16 bg-[#42484F]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between py-10">
         {/* Left Part - Text Content */}
         <div className="md:w-1/2 text-center md:text-left">
-          <h3 className="text-5xl text-gray-700 font-extrabold mb-10">
+          <h3 className="text-5xl text-white font-extrabold mb-10">
             Empowering <br /> Businesses to Thrive with Comprehensive
           </h3>
-          <p className="text-lg font-semibold text-gray-400 mb-6">
+          <p className="text-lg font-semibold text-gray-200 mb-6">
             Maximize your team's productivity and drive business growth with our
             innovative workforce management platform. Simplify your hiring process,
             optimize your workforce.
           </p>
-          <button className="mt-4 border bg-gray-700 text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 cursor-pointer hover:bg-gray-600">
+          <button className="mt-4 border text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 cursor-pointer hover:bg-gray-600">
             Learn More
           </button>
         </div>
@@ -96,9 +96,9 @@ const Home = () => (
         {/* Right Part - Image */}
         <div className="md:w-1/2 flex justify-center">
           <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fERldmVsb3BtZW50fGVufDB8fDB8fHww" 
+            src="https://cdn-imgs.dora.run/design/BVsrAQZJJtRIJfxzqmuyfF.webp/w/4096/h/4096/format/webp?" 
             alt="Business Growth" 
-            className="w-full max-w-md rounded-lg shadow-lg"
+            className="w-full max-w-sm"
           />
         </div>
       </div>

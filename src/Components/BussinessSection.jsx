@@ -2,7 +2,7 @@ import React from "react";
 
 const BusinessSection = () => {
   return (
-    <div className="bg-gray-800 text-white py-16 px-6 md:px-20">
+    <div className="bg-[#42484F] text-white py-16 px-6 md:px-20">
       <h2 className="text-4xl font-bold text-center mb-12 leading-snug">
         Empowering Businesses to <br /> Thrive with Efficient Workforce
       </h2>
@@ -39,8 +39,8 @@ const BusinessSection = () => {
             icon: "https://cdn-imgs.dora.run/design/JvHL7F5LN87KFqAjgPXNV4.webp/w/4096/h/4096/format/webp?"
           }
         ].map((item, index) => (
-          <div key={index} className="flex items-start gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg">
-            <div className="bg-gray-700 p-4 rounded-full transition-all duration-300 hover:scale-105">
+          <div key={index} className="flex items-start gap-4 p-4">
+            <div className="bg-[#42484F] p-4 rounded-full transition-all duration-300 hover:scale-105">
               <img src={item.icon} alt={`${item.title} Icon`} className="w-12" />
             </div>
             <div>

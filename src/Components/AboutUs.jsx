@@ -5,32 +5,39 @@ import { FaHandshake, FaBullseye, FaSearch, FaUsers, FaClock, FaMobileAlt, FaAwa
 
 const AboutUs = () => {
   return (
-    <section className="bg-gradient-to-b from-blue-50 to-white py-16 px-6 md:px-12">
+    <section className="bg-white py-16 px-6 md:px-12">
       {/* Header Section */}
-      <div className="max-w-6xl mx-auto text-center">
-        <motion.h2
-          className="text-5xl font-extrabold text-gray-900 mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          About Us
-        </motion.h2>
-        <motion.p
-          className="text-lg text-gray-700 max-w-3xl mx-auto mb-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Welcome to <span className="font-semibold text-blue-600">Our Company</span>, the ultimate platform connecting job seekers with top recruiters seamlessly.
-        </motion.p>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-32 items-center text-center md:text-left">
+        {/* Left Content */}
+        <div className="md:w-1/2">
+          <motion.h2
+            className="text-5xl font-extrabold text-gray-900 mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            About Us
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-700 max-w-3xl mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Welcome to <span className="font-semibold text-blue-600">Our Company</span>, the ultimate platform connecting job seekers with top recruiters seamlessly.
+          </motion.p>
+        </div>
+        {/* Right Image */}
+        <div className="md:w-1/2 max-w-lg flex justify-center">
+          <img src="https://media.istockphoto.com/id/523262976/photo/about-us-concept-with-alphabet-blocks.jpg?b=1&s=612x612&w=0&k=20&c=CeeT5Xf17WptWZifaLayhb50pwXzdg6d6Vmxl-dW7Ak=" alt="About Us" className="rounded-lg shadow-lg" />
+        </div>
       </div>
 
       {/* Who We Are */}
-      <div className="max-w-6xl mx-auto text-center mb-16">
+      <div className="max-w-6xl mx-auto text-center mb-16 mt-20">
         <motion.h3 className="text-3xl font-bold text-gray-900 mb-6">Who We Are</motion.h3>
         <motion.p className="text-gray-700 max-w-4xl mx-auto mb-8">
-          At <span className="font-semibold text-blue-600">Our Comapny</span>, we believe in empowering careers. Our AI-driven platform connects talented job seekers with leading employers, ensuring the best match for their skills and aspirations.
+          At <span className="font-semibold text-blue-600">Our Company</span>, we believe in empowering careers. Our AI-driven platform connects talented job seekers with leading employers, ensuring the best match for their skills and aspirations.
         </motion.p>
       </div>
 
@@ -57,7 +64,7 @@ const AboutUs = () => {
       </div>
 
       {/* Why Choose Us */}
-      <div className="max-w-6xl mx-auto mt-16 text-center">
+      <div className="max-w-6xl mx-auto mt-20 text-center">
         <motion.h3 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us?</motion.h3>
         <div className="grid md:grid-cols-2 gap-6">
           {[
@@ -69,6 +76,10 @@ const AboutUs = () => {
             <motion.div
               key={index}
               className="p-6 bg-white shadow-lg rounded-xl flex items-center space-x-4 transform hover:scale-105 transition duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
               {feature.icon}
               <div>
@@ -79,15 +90,24 @@ const AboutUs = () => {
           ))}
         </div>
       </div>
+
       {/* Core Values */}
       <div className="max-w-6xl mx-auto mt-16 text-center">
         <motion.h3 className="text-4xl font-bold text-gray-900 mb-6">Our Core Values</motion.h3>
         <motion.div className="grid md:grid-cols-3 gap-10">
-          {[{ title: "Innovation", desc: "We continuously improve our platform to provide cutting-edge solutions.", icon: <FaLightbulb className="text-yellow-500 text-4xl" /> },
+          {[
+            { title: "Innovation", desc: "We continuously improve our platform to provide cutting-edge solutions.", icon: <FaLightbulb className="text-yellow-500 text-4xl" /> },
             { title: "Integrity", desc: "Transparency and trust are the foundation of our platform.", icon: <FaHandshake className="text-green-500 text-4xl" /> },
-            { title: "Excellence", desc: "We strive for perfection to provide the best experience for our users.", icon: <FaBullseye className="text-red-500 text-4xl" /> }
+            { title: "Excellence", desc: "We strive for perfection to provide the best experience for our users.", icon: <FaBullseye className="text-red-500 text-4xl" /> },
           ].map((value, index) => (
-            <motion.div key={index} className="p-6 bg-white shadow-xl rounded-xl" whileHover={{ scale: 1.05 }}>
+            <motion.div
+              key={index}
+              className="p-6 bg-white shadow-xl rounded-xl transform hover:scale-105 transition duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="mb-4 flex justify-center">{value.icon}</div>
               <h4 className="text-2xl font-semibold text-gray-800">{value.title}</h4>
               <p className="text-gray-600">{value.desc}</p>
@@ -108,6 +128,10 @@ const AboutUs = () => {
             <motion.div
               key={index}
               className="p-6 bg-white shadow-lg rounded-xl transform hover:scale-105 transition duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
               <div className="mb-4 flex justify-center">{achievement.icon}</div>
               <h4 className="text-xl font-semibold text-gray-800">{achievement.title}</h4>
