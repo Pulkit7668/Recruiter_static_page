@@ -11,6 +11,7 @@ import ContactUs from "./ContactUs";
 const StaticPage = () => {
   const [selectedSection, setSelectedSection] = useState("home");
   const [userType, setUserType] = useState("recruiter");
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const renderSection = () => {
     if (selectedSection === "home") {
@@ -58,11 +59,57 @@ const StaticPage = () => {
             </li>
             {/* Show Services only for recruiters */}
             {userType === "recruiter" && (
-              <li>
-                <button onClick={() => setSelectedSection("services")} className="hover:text-blue-600 hover:border-b-2 border-orange-500 pb-1 transition-all duration-300 py-1 cursor-pointer">
+              <li className="relative" 
+                onMouseEnter={() => setIsDropdownVisible(true)}
+                onMouseLeave={() => setIsDropdownVisible(false)}
+              >
+                <button onClick= {() => setSelectedSection("services")} className="hover:text-blue-600 hover:border-b-2 border-orange-500 pb-1 transition-all duration-300 py-1 cursor-pointer">
                   Services
                 </button>
-              </li>
+              {/* Dropdown */}
+              {isDropdownVisible && (
+              <div className="absolute right-2 top-8 mt-2 w-[700px] bg-white shadow-md rounded-3xl z-10 p-4">
+                <div className="grid grid-cols-3 gap-6 text-gray-800">
+                  {/* Column 1 */}
+                  <div className="border-r border-gray-300 pr-4">
+                    <h3 className="font-bold mb-2">Resume writing</h3>
+                    <ul className="space-y-1 text-gray-500 font-normal">
+                      <li><a href="#" className="hover:text-blue-600">Text resume</a></li>
+                      <li><a href="#" className="hover:text-blue-600">Visual resume</a></li>
+                      <li><a href="#" className="hover:text-blue-600">Resume critique</a></li>
+                    </ul>
+                    <h3 className="font-bold mt-4 mb-2">Find Jobs</h3>
+                    <ul className="space-y-1 text-gray-500 font-normal">
+                      <li><a href="#" className="hover:text-blue-600">Jobs4u</a></li>
+                      <li><a href="#" className="hover:text-blue-600">Priority applicant</a></li>
+                      <li><a href="#" className="hover:text-blue-600">Contact us</a></li>
+                    </ul>
+                  </div>
+                  {/* Column 2 */}
+                  <div className="border-r border-gray-300 pr-4">
+                    <h3 className="font-bold mb-2">Get recruiter's attention</h3>
+                    <ul className="space-y-1 text-gray-500 font-normal">
+                      <li><a href="#" className="hover:text-blue-600">Resume display</a></li>
+                    </ul>
+                    <h3 className="font-bold mt-10 mb-2">Monthly subscriptions</h3>
+                    <ul className="space-y-1 text-gray-500 font-normal">
+                      <li><a href="#" className="hover:text-blue-600">Basic & premium plans</a></li>
+                    </ul>
+                  </div>
+                  {/* Column 3 */}
+                  <div>
+                    <h3 className="font-bold mb-2">Free resume resources</h3>
+                    <ul className="space-y-1 text-gray-500 font-normal">
+                      <li><a href="#" className="hover:text-blue-600">Resume maker</a></li>
+                      <li><a href="#" className="hover:text-blue-600">Resume quality score</a></li>
+                      <li><a href="#" className="hover:text-blue-600">Resume samples</a></li>
+                      <li><a href="#" className="hover:text-blue-600">Job letter samples</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              )}
+            </li>   
             )}
             <li>
               <button onClick={() => setSelectedSection("contact-us")} className="hover:text-blue-600 hover:border-b-2 border-orange-500 pb-1 transition-all duration-300 py-1 cursor-pointer">
