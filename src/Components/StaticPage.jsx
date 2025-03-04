@@ -412,7 +412,7 @@ const StaticPage = () => {
                 {/* Show Sign Up button only for recruiters */}
                 {userType === "recruiter" && (
                   <li>
-                    <button className="w-full text-left py-2 font-semibold hover:text-blue-600 transition-all duration-300">
+                    <button onClick={() => navigate("/signup")} className="w-full text-left py-2 font-semibold hover:text-blue-600 transition-all duration-300">
                       Sign Up
                     </button>
                   </li>
