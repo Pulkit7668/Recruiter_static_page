@@ -2,8 +2,8 @@ import React from "react";
 
 const BusinessSection = () => {
   return (
-    <div className="bg-[#42484F] text-white py-16 px-6 md:px-20">
-      <h2 className="text-4xl font-bold text-center mb-12 leading-snug">
+    <div className="bg-[#42484F] text-white py-16 lg:px-20">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-12 leading-snug">
         Empowering Businesses to <br /> Thrive with Efficient Workforce
       </h2>
       <div className="grid md:grid-cols-2 gap-10">

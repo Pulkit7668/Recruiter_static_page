@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaUsers, FaClipboardCheck, FaChartLine, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -9,7 +10,6 @@ const teamMembers = [
     image: "https://cdn-icons-png.flaticon.com/512/706/706830.png",
     linkedin: "#",
     twitter: "#",
-    bio: "Jane has over 15 years of experience in HR tech and talent acquisition.",
   },
   {
     name: "Michael Johnson",
@@ -17,7 +17,6 @@ const teamMembers = [
     image: "https://cdn-icons-png.flaticon.com/512/706/706831.png",
     linkedin: "#",
     twitter: "#",
-    bio: "Michael specializes in optimizing operational processes and team management.",
   },
   {
     name: "Emily Davis",
@@ -25,7 +24,6 @@ const teamMembers = [
     image: "https://cdn-icons-png.flaticon.com/512/219/219969.png",
     linkedin: "#",
     twitter: "#",
-    bio: "Emily connects top talents with the right opportunities using AI-powered tools.",
   },
   {
     name: "Chris Nguyen",
@@ -33,22 +31,22 @@ const teamMembers = [
     image: "https://cdn-icons-png.flaticon.com/512/219/219970.png",
     linkedin: "#",
     twitter: "#",
-    bio: "Chris ensures a seamless hiring experience with his expertise in recruitment.",
   },
 ];
 
 const RecruiterHome = () => {
   const [expanded, setExpanded] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className="font-sans text-gray-900 bg-white relative overflow-hidden">
       {/* Hero Section */}
-      <section id="home" className="mx-10 py-20 px-8 relative">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <section id="home" className="mx-4 sm:mx-10 md:mx-0 lg:mx-10 py-10 sm:py-20 px-4 sm:px-8 relative">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
           {/* Left Content */}
-          <div className="md:w-1/2 text-center md:text-left">
+          <div className="sm:w-1/2 text-center sm:text-left">
             <motion.h2
-              className="text-5xl font-bold leading-tight"
+              className="text-3xl sm:text-5xl md:text-3xl lg:text-5xl font-bold leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -56,7 +54,7 @@ const RecruiterHome = () => {
               Hire Top <span className="text-blue-600">Talent</span> Efficiently!
             </motion.h2>
             <motion.p
-              className="mt-4 text-lg text-gray-700"
+              className="mt-4 text-base sm:text-lg text-gray-700"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -64,23 +62,20 @@ const RecruiterHome = () => {
               Post job openings, track applications, and find the perfect candidates for your business.
             </motion.p>
             <motion.button
-              className="mt-6 bg-blue-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg flex items-center gap-2 hover:bg-blue-700 transition-all duration-300"
+              className="mt-6 bg-blue-600 cursor-pointer text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg flex items-center gap-2 hover:bg-blue-700 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
+              onClick={() => navigate("/signup")}
             >
               Get Started Today <FaArrowRight />
             </motion.button>
           </div>
 
           {/* Right Image */}
-          <div className="md:w-1/2 flex justify-center mt-8 md:mt-0 relative">
+          <div className="sm:w-1/2 flex justify-center mt-8 sm:mt-0 relative">
             <img
               src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Recruiter Hiring"
-              className="w-full max-w-lg rounded-lg shadow-lg"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              whileHover={{ scale: 1.05 }}
+              className="w-full max-w-xs sm:max-w-lg rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -140,7 +135,7 @@ const RecruiterHome = () => {
       </section>
 
       {/* Trusted by Leading Brands Section */}
-      <section className="bg-white py-12 px-6 md:px-40 flex flex-col md:flex-row items-center justify-between">
+      <section className="bg-white py-12 px-6 lg:px-40 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 text-left">
           <p className="text-sm uppercase text-gray-500">Partner with the Best</p>
           <h2 className="text-3xl font-bold mt-2">Trusted by Leading Brands</h2>
@@ -186,23 +181,13 @@ const RecruiterHome = () => {
                   <FaTwitter />
                 </a>
               </div>
-
-              <p className="mt-3 text-gray-600 text-sm">
-                {expanded === index ? member.bio : `${member.bio.substring(0, 50)}... `}
-                <button
-                  onClick={() => setExpanded(expanded === index ? null : index)}
-                  className="text-blue-500 hover:underline"
-                >
-                  {expanded === index ? "Show Less" : "Read More"}
-                </button>
-              </p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Personal Guidance */}
-      <section className="bg-white py-16 mx-32">
+      <section className="bg-white py-16 mx-4 lg:mx-32">
         <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Section - Text */}
           <div>
@@ -240,20 +225,19 @@ const RecruiterHome = () => {
       </section>
 
       {/* Hiring component */}
-      <section className="w-full bg-white">
+      <section className="w-full bg-gray-50">
         {/* Hero Section */}
         <div className="max-w-6xl mx-auto px-4 md:px-8 lg:flex lg:items-center lg:justify-between py-16">
           {/* left Image */}
           <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
-            <motion.img
+            <img
               src="https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Business Professional"
               className="w-80 md:w-96 rounded-lg shadow-lg"
-              whileHover={{ scale: 1.05 }}
             />
           </div>
           {/* right Content */}
-          <div className="lg:w-1/2 text-center lg:text-left">
+          <div className="lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
             <p className="text-blue-500 uppercase text-sm font-medium">Revolutionize Your Hiring</p>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               Unlock the Power of Partnership
