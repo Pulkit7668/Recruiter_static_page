@@ -51,7 +51,7 @@ export default function RazorpayPayment({ plan, onSuccess, onFailure }) {
     }
 
     const options = {
-      key: "rzp_test_YOUR_KEY_ID", // Replace with your actual Razorpay key
+      key: "rzp_test_kd6KSYCE0Tm8HI", // Replace with your actual Razorpay key
       amount: getPlanAmount(),
       currency: "INR",
       name: "Recruiter Platform",
