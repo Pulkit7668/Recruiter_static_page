@@ -32,12 +32,12 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
     <div className="space-y-6">
       <div className="text-center mb-6">
         <h3 className="text-xl font-semibold text-gray-800">Personal Information</h3>
-        <p className="text-gray-500">Please provide your personal details</p>
+        <p className="text-gray-500 text-sm sm:text-base">Please provide your personal details</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div>
-          <label htmlFor="person_name" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="person_name" className="block font-medium text-gray-700 mb-1 text-sm sm:text-base">
             Full Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -47,15 +47,15 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
             placeholder="John Doe"
             value={formData.person_name}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border ${
+            className={`w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border ${
               errors.person_name ? "border-red-300 bg-red-50" : "border-gray-300"
             } rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400 outline-none transition-colors`}
           />
-          {errors.person_name && <p className="text-sm text-red-500 mt-1">{errors.person_name}</p>}
+          {errors.person_name && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.person_name}</p>}
         </div>
 
         <div>
-          <label htmlFor="person_position" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="person_position" className="block font-medium text-gray-700 mb-1 text-sm sm:text-base">
             Position <span className="text-red-500">*</span>
           </label>
           <select
@@ -63,7 +63,7 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
             name="person_position"
             value={formData.person_position || ""}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border ${
+            className={`w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border ${
               errors.person_position ? "border-red-300 bg-red-50" : "border-gray-300"
             } rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400 outline-none transition-colors appearance-none bg-white`}
             style={{
@@ -82,11 +82,11 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
               </option>
             ))}
           </select>
-          {errors.person_position && <p className="text-sm text-red-500 mt-1">{errors.person_position}</p>}
+          {errors.person_position && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.person_position}</p>}
         </div>
 
         <div>
-          <label htmlFor="country_code" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="country_code" className="block font-medium text-gray-700 mb-1 text-sm sm:text-base">
             Country Code <span className="text-red-500">*</span>
           </label>
           <select
@@ -94,7 +94,7 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
             name="country_code"
             value={formData.country_code || ""}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border ${
+            className={`w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border ${
               errors.country_code ? "border-red-300 bg-red-50" : "border-gray-300"
             } rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400 outline-none transition-colors appearance-none bg-white`}
             style={{
@@ -113,11 +113,11 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
               </option>
             ))}
           </select>
-          {errors.country_code && <p className="text-sm text-red-500 mt-1">{errors.country_code}</p>}
+          {errors.country_code && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.country_code}</p>}
         </div>
 
         <div>
-          <label htmlFor="mobile" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="mobile" className="block font-medium text-gray-700 mb-1 text-sm sm:text-base">
             Mobile Number <span className="text-red-500">*</span>
           </label>
           <input
@@ -127,15 +127,15 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
             placeholder="9876543210"
             value={formData.mobile}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border ${
+            className={`w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border ${
               errors.mobile ? "border-red-300 bg-red-50" : "border-gray-300"
             } rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400 outline-none transition-colors`}
           />
-          {errors.mobile && <p className="text-sm text-red-500 mt-1">{errors.mobile}</p>}
+          {errors.mobile && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.mobile}</p>}
         </div>
 
         <div>
-          <label htmlFor="email" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="email" className="block font-medium text-gray-700 mb-1 text-sm sm:text-base">
             Email <span className="text-red-500">*</span>
           </label>
           <input
@@ -145,15 +145,15 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
             placeholder="john.doe@example.com"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border ${
+            className={`w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border ${
               errors.email ? "border-red-300 bg-red-50" : "border-gray-300"
             } rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400 outline-none transition-colors`}
           />
-          {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
+          {errors.email && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.email}</p>}
         </div>
 
         <div>
-          <label htmlFor="user_name" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="user_name" className="block font-medium text-gray-700 mb-1 text-sm sm:text-base">
             Username <span className="text-red-500">*</span>
           </label>
           <input
@@ -163,15 +163,15 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
             placeholder="johndoe123"
             value={formData.user_name}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border ${
+            className={`w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border ${
               errors.user_name ? "border-red-300 bg-red-50" : "border-gray-300"
             } rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400 outline-none transition-colors`}
           />
-          {errors.user_name && <p className="text-sm text-red-500 mt-1">{errors.user_name}</p>}
+          {errors.user_name && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.user_name}</p>}
         </div>
 
         <div>
-          <label htmlFor="password" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="password" className="block font-medium text-gray-700 mb-1 text-sm sm:text-base">
             Password <span className="text-red-500">*</span>
           </label>
           <input
@@ -181,15 +181,14 @@ export default function PersonalDetailsForm({ formData, handleChange, errors }) 
             placeholder="••••••••"
             value={formData.password}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border ${
+            className={`w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border ${
               errors.password ? "border-red-300 bg-red-50" : "border-gray-300"
             } rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400 outline-none transition-colors`}
           />
-          {errors.password && <p className="text-sm text-red-500 mt-1">{errors.password}</p>}
+          {errors.password && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.password}</p>}
           <p className="text-xs text-gray-500 mt-1">Password must be at least 8 characters long</p>
         </div>
       </div>
     </div>
   )
 }
-

@@ -97,12 +97,12 @@ export default function SubscriptionForm({ formData, handleSelectChange }) {
         <p className="text-gray-500">Select a plan that best fits your recruitment needs</p>
       </div>
 
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-6 sm:mb-8">
         <div className="inline-flex p-1 bg-gray-100 rounded-lg shadow-inner">
           {["monthly", "quarterly", "yearly"].map((period) => (
             <button
               key={period}
-              className={`px-6 py-2.5 rounded-md font-medium transition-all ${
+              className={`px-3 py-1.5 sm:px-6 sm:py-2.5 text-xs sm:text-sm rounded-md font-medium transition-all ${
                 billingPeriod === period
                   ? "bg-white text-blue-600 shadow-sm"
                   : "bg-transparent text-gray-600 hover:text-gray-800"
@@ -118,50 +118,50 @@ export default function SubscriptionForm({ formData, handleSelectChange }) {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3 sm:grid-cols-2">
         {subscriptionPlans.map((plan) => (
           <div
             key={plan.id}
-            className={`relative border-2 p-6 rounded-xl shadow-sm cursor-pointer transition-all ${
+            className={`relative border-2 p-4 sm:p-6 rounded-xl shadow-sm cursor-pointer transition-all ${
               formData.plan === plan.id
-                ? "border-blue-500 bg-blue-50 transform scale-105"
+                ? "border-blue-500 bg-blue-50 transform scale-[1.02] sm:scale-105"
                 : "border-gray-200 hover:border-blue-300 hover:shadow-md"
             }`}
             onClick={() => handlePlanSelect(plan.id)}
           >
             {plan.recommended && (
-              <div className="absolute top-0 right-0 -mt-3 -mr-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs px-3 py-1 rounded-full shadow-md">
+              <div className="absolute top-0 right-0 -mt-3 -mr-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs px-2 py-0.5 sm:px-3 sm:py-1 rounded-full shadow-md">
                 Recommended
               </div>
             )}
-            <h4 className="text-xl font-bold text-gray-800">{plan.name}</h4>
+            <h4 className="text-lg sm:text-xl font-bold text-gray-800">{plan.name}</h4>
             <div className="mt-2">
-              <p className="text-3xl font-bold text-gray-900">₹{plan.price[billingPeriod]}</p>
-              <p className="text-sm text-gray-500">{getBillingLabel()}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900">₹{plan.price[billingPeriod]}</p>
+              <p className="text-xs sm:text-sm text-gray-500">{getBillingLabel()}</p>
               {billingPeriod === "yearly" && calculateSavings(plan) > 0 && (
                 <p className="text-xs text-green-600 font-medium mt-1">
                   Save {calculateSavings(plan)}% with annual billing
                 </p>
               )}
             </div>
-            <div className="mt-6">
-              <h5 className="text-sm font-semibold mb-3 text-gray-700">What's included:</h5>
-              <ul className="space-y-2.5 text-sm">
+            <div className="mt-4 sm:mt-6">
+              <h5 className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3 text-gray-700">What's included:</h5>
+              <ul className="space-y-1.5 sm:space-y-2.5 text-xs sm:text-sm">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center">
-                    <Check className="h-4 w-4 mr-2 text-green-500 flex-shrink-0" />
+                    <Check className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 text-green-500 flex-shrink-0" />
                     <span className="text-gray-600">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
             {plan.unavailable.length > 0 && (
-              <div className="mt-4">
-                <h5 className="text-sm font-semibold mb-3 text-gray-500">Not included:</h5>
-                <ul className="space-y-2.5 text-sm text-gray-500">
+              <div className="mt-3 sm:mt-4">
+                <h5 className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3 text-gray-500">Not included:</h5>
+                <ul className="space-y-1.5 sm:space-y-2.5 text-xs sm:text-sm text-gray-500">
                   {plan.unavailable.map((feature, i) => (
                     <li key={i} className="flex items-center">
-                      <X className="h-4 w-4 mr-2 text-gray-400 flex-shrink-0" />
+                      <X className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 text-gray-400 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -169,7 +169,7 @@ export default function SubscriptionForm({ formData, handleSelectChange }) {
               </div>
             )}
             <button
-              className={`w-full mt-6 px-4 py-3 rounded-lg font-medium transition-colors ${
+              className={`w-full mt-4 sm:mt-6 px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm rounded-lg font-medium transition-colors ${
                 formData.plan === plan.id
                   ? "bg-green-500 hover:bg-green-600 text-white"
                   : "bg-blue-500 hover:bg-blue-600 text-white"
@@ -184,4 +184,3 @@ export default function SubscriptionForm({ formData, handleSelectChange }) {
     </div>
   )
 }
-

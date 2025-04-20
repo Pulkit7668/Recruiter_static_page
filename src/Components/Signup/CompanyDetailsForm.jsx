@@ -45,42 +45,42 @@ export default function CompanyDetailsForm({ formData, handleChange, handleSelec
 
       {/* Company Logo */}
       <div className="mb-6">
-        <label htmlFor="logo" className="block font-medium text-gray-700 mb-2">
+        <label htmlFor="logo" className="block font-medium text-gray-700 mb-2 text-sm sm:text-base">
           Company Logo
         </label>
         <div className="flex items-center">
           {formData.logo ? (
-            <div className="relative w-28 h-28 mr-4">
+            <div className="relative w-20 h-20 sm:w-28 sm:h-28 mr-4">
               <img
                 src={URL.createObjectURL(formData.logo) || "/placeholder.svg"}
                 alt="Company Logo"
-                className="w-28 h-28 object-cover border rounded-lg shadow-sm"
+                className="w-20 h-20 sm:w-28 sm:h-28 object-cover border rounded-lg shadow-sm"
               />
               <button
                 type="button"
-                className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-md hover:bg-red-600 transition-colors"
+                className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shadow-md hover:bg-red-600 transition-colors"
                 onClick={() => handleSelectChange("logo", null)}
               >
                 ×
               </button>
             </div>
           ) : (
-            <div className="w-28 h-28 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mr-4 bg-gray-50">
-              <span className="text-gray-400 text-sm">No logo</span>
+            <div className="w-20 h-20 sm:w-28 sm:h-28 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mr-4 bg-gray-50">
+              <span className="text-gray-400 text-xs sm:text-sm">No logo</span>
             </div>
           )}
           <input id="logo" name="logo" type="file" accept="image/*" onChange={handleChange} className="hidden" />
           <label
             htmlFor="logo"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 transition-colors shadow-sm"
+            className="px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 transition-colors shadow-sm"
           >
             Upload Logo
           </label>
         </div>
-        {errors.logo && <p className="text-sm text-red-500 mt-1">{errors.logo}</p>}
+        {errors.logo && <p className="text-xs sm:text-sm text-red-500 mt-1">{errors.logo}</p>}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {/* Company Name */}
         <div>
           <label htmlFor="companyName" className="block font-medium text-gray-700 mb-1">
@@ -313,4 +313,3 @@ export default function CompanyDetailsForm({ formData, handleChange, handleSelec
     </div>
   )
 }
-
